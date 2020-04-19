@@ -1,35 +1,36 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
-</section>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>
+  <title>KodeNames</title>
+  <meta name="description" content="Kodenames">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="styles/styles.css?v=1.0">
+</head>
+
+<body>
+  <div>
+    <div id='header'>
+      <a href="https://github.com/ninjabunny/KodeNames" target='_blank'>Kodenames</a>
+      <span id="redScore"></span>
+      <span id="blueScore"></span>
+      <input type="text" id="seed" placeholder="seed" size="8" autofocus>
+      <button id="reset" onclick="fire()">Reset</button>
+      <span id="confirmText">confirm?</span>
+      <input type="checkbox" id="confirm">
+      <button id="spymaster" onclick="spyMaster()">SpyMaster</button>
+    </div>
+  </div>
+  <div id="board">
+    <%= for i <- 0..5 do %>
+      <div class="row">
+        <%= for j <- 0..5 do %>
+          <div class="word">
+            <%= get_word(i, j)%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+   </div>
+</body>
+</html>

@@ -1,3 +1,25 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+
+#board {
+  width: 97%;
+  height: 85%;
+}
+
+#board div.row {
+  box-sizing: border-box;
+  height: 20%;
+}
+
+#board div.word {
+  text-align: center;
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
+
+
+#board div div {
+  outline: 1px solid;
+}
