@@ -1,4 +1,4 @@
-defmodule CodenamesWeb.PageView do
+defmodule CodenamesWeb.BoardView do
   use CodenamesWeb, :view
   alias CodenamesWeb.Data
   alias Kernel

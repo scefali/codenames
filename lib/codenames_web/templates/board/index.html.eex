@@ -14,7 +14,7 @@
       <span id="redScore"></span>
       <span id="blueScore"></span>
       <%= form_for @conn, Routes.board_path(@conn, :index), fn f -> %>
-        <%= text_input f, :seed, placeholder: "seed"%>
+        <%= text_input f, :seed, placeholder: "seed", value: @seed %>
         <button id="reset" onclick="fire()">Reset</button>
         <span id="confirmText">confirm?</span>
         <input type="checkbox" id="confirm">
@@ -23,5 +23,16 @@
       <% end %>
     </div>
   </div>
+  <div id="board">
+    <%= for i <- 0..4 do %>
+      <div class="row">
+        <%= for j <- 0..4 do %>
+          <div class="word">
+            <%= get_word(@conn, i, j)%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+   </div>
 </body>
 </html>
