@@ -3,23 +3,54 @@
 @import "./phoenix.css";
 
 #board {
+  position: absolute;
+  box-sizing: border-box;
   width: 97%;
   height: 85%;
+  border: #ca405f;
+  border-style: solid;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 #board div.row {
-  box-sizing: border-box;
   height: 20%;
 }
 
 #board div.word {
   text-align: center;
-  position: relative;
+  border-radius: 5px;
+  border: 2px #dddddd solid;
+}
+
+#board div.word a {
+  text-transform: uppercase;
+  font-size: large;
+  color: black;
+  font-weight: bold;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+#board div.word-wrapper {
   width: 20%;
   height: 100%;
+  display: inline-block;
 }
 
 
-#board div div {
-  outline: 1px solid;
+.red {
+  background-color: red;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.blue {
+  background-color: blue;
 }

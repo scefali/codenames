@@ -2,23 +2,20 @@ defmodule CodenamesWeb.BoardView do
   use CodenamesWeb, :view
   alias CodenamesWeb.Data
   alias Kernel
+  import Plug.Conn
 
-  def create_board() do
-    :rand.seed(:exrop, 5)
-    words = Data.get_all_words()
-    total = length(words)
-    board = []
-    for i <- 0..24 do
-      index = Enum.random(0..(total - i))
-      {word, words} = List.pop_at(words, index)
-      board = [word | board]
-    end
+
+
+  def get_word(conn, i, j) do
+    tally = conn |> get_session(:game)
+    Enum.at(tally.words, i * 5 + j)
   end
-  
 
-  def get_word(conn, i, j) do 
-    IO.puts(conn.state)
-    board = create_board()
-    Enum.at(board, i * 5 + j)
+  def get_class(conn, i, j) do
+    tally = get_session(conn, :game)
+    color = Enum.at(tally.colors, i * 5 + j)
+    # IO.puts(color)
+    # color
+    ""
   end
 end
